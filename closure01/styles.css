@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;  /* Changed from center to flex-start to avoid clipping */
+    min-height: 100vh;  /* Ensure the body takes full height */
+    box-sizing: border-box;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;  /* Add spacing between sections */
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    width: 100%;
+    margin-bottom: 20px;  /* Add spacing under the title */
+  }
+  
+  .section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    width: 48%;  /* Adjust width to fit more content per row */
+    box-sizing: border-box;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #4cae4c;
+  }
+  
+  p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #555;
+  }
+  
+  pre {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  code {
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  .highlight {
+    background-color: #fff9c4;
+    padding: 10px;
+    margin-top: 15px;
+    border-left: 4px solid #ffeb3b;
+    font-size: 16px;
+  }
+  
+  .highlight strong {
+    color: #333;
+    font-size: 18px;
+  }
+  
+  .highlight p {
+    margin: 5px 0;
+  }
+  
+  .github-btn-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .github-btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  .github-btn:hover {
+    background-color: #555;
+  }
+  

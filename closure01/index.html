@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closure and Click Counter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Closure example using Click Counter</h2>
+
+    <!-- Global Variable Approach -->
+    <section class="section">
+      <h3>Global Variable Approach (Without Closure)</h3>
+      <button onclick="updateClickCount()">Click Me</button>
+      <p>Clicks: <span id="clickCountGlobal">0</span></p>
+      <pre><code>let counterGlobal = 0;
+function updateClickCount() {
+  ++counterGlobal;
+  document.getElementById('clickCountGlobal').textContent = counterGlobal;
+}</code></pre>
+      <div class="highlight">
+        <strong>Explanation:</strong>
+        <p>The counter is stored in a global variable, meaning other scripts can also modify it. This is not secure for controlling data.</p>
+      </div>
+    </section>
+
+    <!-- Counter Inside Function -->
+    <section class="section">
+      <h3>Counter Declared Inside the Function</h3>
+      <button onclick="updateClickCountLocal()">Click Me</button>
+      <p>Clicks: <span id="clickCountInsideFunction">0</span></p>
+      <pre><code>function updateClickCountLocal() {
+  let counterLocal = 0;
+  ++counterLocal;
+  document.getElementById('clickCountInsideFunction').textContent = counterLocal;
+}</code></pre>
+      <div class="highlight">
+        <strong>Explanation:</strong>
+        <p>Here, the counter is reset each time the function is called. This doesn't maintain the count across multiple clicks!</p>
+      </div>
+    </section>
+
+    <!-- Nested Functions -->
+    <section class="section">
+      <h3>Nested Functions (Without Closure)</h3>
+      <button onclick="countWrapper()">Click Me</button>
+      <p>Clicks: <span id="clickCountNested">0</span></p>
+      <pre><code>function countWrapper() {
+  let counterNested = 0;
+  function updateClickCount() {
+    ++counterNested;
+    document.getElementById('clickCountNested').textContent = counterNested;
+  }
+  updateClickCount(); // Only called once, doesn't update on click
+}</code></pre>
+      <div class="highlight">
+        <strong>Explanation:</strong>
+        <p>The inner function has access to the counter, but it’s only invoked once, so the counter won't persist.</p>
+      </div>
+    </section>
+
+    <!-- Closure -->
+    <section class="section">
+      <h3>Closure Approach (Private Variable)</h3>
+      <button onclick="updateClickCountClosure()">Click Me</button>
+      <p>Clicks: <span id="clickCountClosure">0</span></p>
+      <pre><code>const updateClickCountClosure = (function () {
+  let counterClosure = 0;
+  
+  return function () {
+    ++counterClosure;
+    document.getElementById('clickCountClosure').textContent = counterClosure;
+  };
+})();</code></pre>
+      <div class="highlight">
+        <strong>Explanation:</strong>
+        <p>This is where closure shines! The counter is kept private and can only be modified through the provided function, ensuring data encapsulation.</p>
+      </div>
+    </section>
+
+    <!-- GitHub Button -->
+    <div class="github-btn-container">
+      <a href="https://github.com/your-username/your-repo" target="_blank">
+        <button class="github-btn">View on GitHub</button>
+      </a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
